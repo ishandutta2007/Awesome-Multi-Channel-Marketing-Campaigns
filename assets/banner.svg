@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
   <defs>
     <!-- Background Gradients -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -7,10 +7,18 @@
       <stop offset="100%" stop-color="#1e1b4b" />
     </linearGradient>
 
+    <!-- Title Gradient -->
     <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38bdf8" />
       <stop offset="50%" stop-color="#818cf8" />
       <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Pipeline / Flow Gradients -->
+    <linearGradient id="flow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#34d399" />
     </linearGradient>
 
     <!-- Channel Pill Gradients -->
@@ -34,162 +42,134 @@
       <stop offset="0%" stop-color="#a855f7" />
       <stop offset="100%" stop-color="#7e22ce" />
     </linearGradient>
-
-    <!-- Flow Gradient -->
-    <linearGradient id="flow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="50%" stop-color="#818cf8" />
-      <stop offset="100%" stop-color="#34d399" />
-    </linearGradient>
   </defs>
 
-  <style>
-    .title-text {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 800;
-      font-size: 40px;
-      letter-spacing: -0.5px;
-    }
-    .subtitle-text {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 500;
-      font-size: 18px;
-      letter-spacing: 0.2px;
-      fill: #cbd5e1;
-    }
-    .pill-text {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      fill: #ffffff;
-    }
-    .badge-tag {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      fill: #38bdf8;
-    }
-
-    /* Safe SMIL & CSS animations compatible across all browsers & SVG renderers */
-    @keyframes pulseDot {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.95; }
-    }
-    @keyframes dashMove {
-      from { stroke-dashoffset: 0; }
-      to { stroke-dashoffset: -32; }
-    }
-    @keyframes gentleFloat1 {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    @keyframes gentleFloat2 {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(5px); }
-    }
-
-    .pulse-glow {
-      animation: pulseDot 3s ease-in-out infinite;
-    }
-    .dash-line {
-      stroke-dasharray: 6 6;
-      animation: dashMove 2.5s linear infinite;
-    }
-    .float-1 {
-      animation: gentleFloat1 5s ease-in-out infinite;
-    }
-    .float-2 {
-      animation: gentleFloat2 5.5s ease-in-out infinite;
-    }
-  </style>
-
-  <!-- Background Canvas -->
+  <!-- Background Base Canvas -->
   <rect width="1200" height="420" rx="16" fill="url(#bg-grad)" />
 
-  <!-- Background Subtle Grid -->
+  <!-- Background Grid Lines -->
   <g opacity="0.12" stroke="#64748b" stroke-width="1">
     <line x1="80" y1="0" x2="80" y2="420" />
     <line x1="300" y1="0" x2="300" y2="420" />
     <line x1="600" y1="0" x2="600" y2="420" />
     <line x1="900" y1="0" x2="900" y2="420" />
     <line x1="1120" y1="0" x2="1120" y2="420" />
-    
     <line x1="0" y1="70" x2="1200" y2="70" />
     <line x1="0" y1="210" x2="1200" y2="210" />
     <line x1="0" y1="350" x2="1200" y2="350" />
   </g>
 
-  <!-- Ambient Blurred Glow Elements using standard SVG circles -->
-  <g opacity="0.18">
-    <circle cx="180" cy="90" r="130" fill="#38bdf8" />
-    <circle cx="1020" cy="330" r="140" fill="#c084fc" />
-    <circle cx="600" cy="390" r="100" fill="#6366f1" />
+  <!-- Ambient Shifting Glow Orbs with Native SMIL Animation -->
+  <g opacity="0.22">
+    <circle cx="180" cy="90" r="140" fill="#38bdf8">
+      <animate attributeName="opacity" values="0.15;0.35;0.15" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="r" values="130;150;130" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1020" cy="330" r="150" fill="#c084fc">
+      <animate attributeName="opacity" values="0.18;0.38;0.18" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="r" values="140;160;140" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="600" cy="380" r="110" fill="#6366f1">
+      <animate attributeName="opacity" values="0.1;0.28;0.1" dur="5s" repeatCount="indefinite" />
+    </circle>
   </g>
 
-  <!-- Dynamic Orchestration Paths (Background/Mid-layer) -->
-  <g opacity="0.6">
-    <path d="M 90 70 C 350 30, 500 100, 700 65 C 920 30, 990 90, 1110 70" fill="none" stroke="url(#flow-grad)" stroke-width="2" class="dash-line" />
-    <path d="M 90 350 C 320 375, 480 325, 600 350 C 760 375, 900 325, 1110 350" fill="none" stroke="url(#flow-grad)" stroke-width="2" class="dash-line" />
+  <!-- Dynamic Orchestration Workflow Lines -->
+  <g opacity="0.55">
+    <path d="M 90 70 C 350 30, 500 100, 700 65 C 920 30, 990 90, 1110 70" fill="none" stroke="url(#flow-grad)" stroke-width="2" stroke-dasharray="6 6">
+      <animate attributeName="stroke-dashoffset" from="0" to="-48" dur="3s" repeatCount="indefinite" />
+    </path>
+    <path d="M 90 350 C 320 375, 480 325, 600 350 C 760 375, 900 325, 1110 350" fill="none" stroke="url(#flow-grad)" stroke-width="2" stroke-dasharray="6 6">
+      <animate attributeName="stroke-dashoffset" from="0" to="48" dur="3.5s" repeatCount="indefinite" />
+    </path>
   </g>
 
-  <!-- Dynamic Glowing Journey Nodes -->
-  <g class="pulse-glow">
-    <circle cx="260" cy="56" r="5" fill="#38bdf8" />
-    <circle cx="700" cy="65" r="5" fill="#818cf8" />
-    <circle cx="950" cy="48" r="5" fill="#34d399" />
-    <circle cx="340" cy="365" r="5" fill="#38bdf8" />
-    <circle cx="850" cy="340" r="5" fill="#c084fc" />
-  </g>
+  <!-- Dynamic Journey Nodes (SMIL Native Pulsing) -->
+  <circle cx="260" cy="56" r="5" fill="#38bdf8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="r" values="4;6.5;4" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="700" cy="65" r="5" fill="#818cf8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite" />
+    <animate attributeName="r" values="4;6.5;4" dur="2.4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="950" cy="48" r="5" fill="#34d399">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite" />
+    <animate attributeName="r" values="4;6.5;4" dur="1.8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="340" cy="365" r="5" fill="#38bdf8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite" />
+    <animate attributeName="r" values="4;6.5;4" dur="2.2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="850" cy="340" r="5" fill="#c084fc">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.6s" repeatCount="indefinite" />
+    <animate attributeName="r" values="4;6.5;4" dur="2.6s" repeatCount="indefinite" />
+  </circle>
 
-  <!-- Top Badge Pill -->
+  <!-- Top Category Tag -->
   <g transform="translate(600, 68)">
     <rect x="-145" y="-16" width="290" height="32" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.2" />
-    <circle cx="-120" cy="0" r="4" fill="#38bdf8" class="pulse-glow" />
-    <text text-anchor="middle" y="4" class="badge-tag">OMNICHANNEL ORCHESTRATION</text>
+    <circle cx="-120" cy="0" r="4" fill="#38bdf8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text text-anchor="middle" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="1.5" fill="#38bdf8">OMNICHANNEL ORCHESTRATION</text>
   </g>
 
-  <!-- Main Hero Titles (Cleanly in Foreground with Safe Fonts & High Contrast) -->
-  <!-- Subtle title shadow for high legibility -->
-  <text text-anchor="middle" x="600" y="152" class="title-text" fill="#000000" opacity="0.45">Awesome Multi-Channel Marketing</text>
-  <text text-anchor="middle" x="600" y="150" class="title-text" fill="url(#text-grad)">Awesome Multi-Channel Marketing</text>
+  <!-- Main Hero Titles (Cleanly in Foreground with High Contrast) -->
+  <text text-anchor="middle" x="600" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="40" letter-spacing="-0.5" fill="#000000" opacity="0.45">Awesome Multi-Channel Marketing</text>
+  <text text-anchor="middle" x="600" y="150" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="40" letter-spacing="-0.5" fill="url(#text-grad)">Awesome Multi-Channel Marketing</text>
 
-  <text text-anchor="middle" x="600" y="196" class="subtitle-text">Campaign Automation  •  Journey Orchestration  •  SaaS &amp; Open-Source Hubs</text>
+  <text text-anchor="middle" x="600" y="196" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="500" font-size="18" letter-spacing="0.2" fill="#cbd5e1">Campaign Automation  •  Journey Orchestration  •  SaaS &amp; Open-Source Hubs</text>
 
-  <!-- Channel Pills Section (Bottom Area) -->
+  <!-- Channel Pills Section (Bottom Area with Dynamic Native SMIL Floating) -->
   <g transform="translate(0, 275)">
     <!-- Email Channel -->
-    <g class="float-1" transform="translate(130, 0)">
+    <g transform="translate(130, 0)">
+      <animateTransform attributeName="transform" type="translate" values="130,0; 130,-5; 130,0" dur="4.5s" repeatCount="indefinite" />
       <rect x="0" y="0" width="160" height="44" rx="22" fill="url(#email-grad)" stroke="#38bdf8" stroke-width="1.2" />
-      <text x="80" y="27" text-anchor="middle" class="pill-text">✉️ Email Journeys</text>
+      <!-- Envelope Icon SVG inside pill -->
+      <path d="M 22 17 L 34 25 L 46 17 M 22 17 L 22 31 L 46 31 L 46 17 Z" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round" />
+      <text x="96" y="27" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#ffffff">Email Journeys</text>
     </g>
 
     <!-- SMS Channel -->
-    <g class="float-2" transform="translate(320, 0)">
+    <g transform="translate(320, 0)">
+      <animateTransform attributeName="transform" type="translate" values="320,0; 320,5; 320,0" dur="5s" repeatCount="indefinite" />
       <rect x="0" y="0" width="145" height="44" rx="22" fill="url(#sms-grad)" stroke="#34d399" stroke-width="1.2" />
-      <text x="72" y="27" text-anchor="middle" class="pill-text">💬 SMS &amp; MMS</text>
+      <!-- Message Bubble Icon -->
+      <path d="M 20 18 C 20 15, 38 15, 38 18 C 38 23, 29 23, 27 27 C 27 25, 20 25, 20 18 Z" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round" />
+      <text x="86" y="27" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#ffffff">SMS &amp; MMS</text>
     </g>
 
     <!-- Push Notification Channel -->
-    <g class="float-1" transform="translate(495, 0)">
+    <g transform="translate(495, 0)">
+      <animateTransform attributeName="transform" type="translate" values="495,0; 495,-5; 495,0" dur="4.8s" repeatCount="indefinite" />
       <rect x="0" y="0" width="180" height="44" rx="22" fill="url(#push-grad)" stroke="#fbbf24" stroke-width="1.2" />
-      <text x="90" y="27" text-anchor="middle" class="pill-text">🔔 Mobile &amp; Web Push</text>
+      <!-- Bell Icon -->
+      <path d="M 28 17 C 28 14, 34 14, 34 17 C 34 24, 37 26, 38 27 L 24 27 C 25 26, 28 24, 28 17 Z M 29 28 C 29 30, 33 30, 33 28 Z" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round" />
+      <text x="105" y="27" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#ffffff">Mobile &amp; Web Push</text>
     </g>
 
     <!-- WhatsApp Channel -->
-    <g class="float-2" transform="translate(705, 0)">
+    <g transform="translate(705, 0)">
+      <animateTransform attributeName="transform" type="translate" values="705,0; 705,5; 705,0" dur="5.2s" repeatCount="indefinite" />
       <rect x="0" y="0" width="165" height="44" rx="22" fill="url(#wa-grad)" stroke="#4ade80" stroke-width="1.2" />
-      <text x="82" y="27" text-anchor="middle" class="pill-text">📱 WhatsApp Cloud</text>
+      <!-- Phone/Chat Icon -->
+      <path d="M 24 28 C 22 24, 24 18, 30 16 C 33 15, 36 17, 37 20 C 35 21, 33 22, 33 23 C 34 25, 35 26, 37 27 C 38 27, 39 25, 40 23 C 43 24, 45 27, 44 30 C 42 36, 36 38, 32 36 Z" transform="scale(0.8) translate(4, -2)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+      <text x="96" y="27" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#ffffff">WhatsApp Cloud</text>
     </g>
 
     <!-- Social & Chat Channel -->
-    <g class="float-1" transform="translate(900, 0)">
+    <g transform="translate(900, 0)">
+      <animateTransform attributeName="transform" type="translate" values="900,0; 900,-5; 900,0" dur="4.6s" repeatCount="indefinite" />
       <rect x="0" y="0" width="170" height="44" rx="22" fill="url(#social-grad)" stroke="#c084fc" stroke-width="1.2" />
-      <text x="85" y="27" text-anchor="middle" class="pill-text">🚀 In-App &amp; Social</text>
+      <!-- Rocket Icon -->
+      <path d="M 22 28 C 25 24, 30 19, 36 17 C 36 23, 31 28, 27 31 M 23 25 C 20 27, 19 31, 19 31 C 19 31, 23 30, 25 27" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="100" y="27" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="#ffffff">In-App &amp; Social</text>
     </g>
   </g>
 
-  <!-- Modern Tech Framing Corner Accents -->
+  <!-- Corner Framing Accents -->
   <path d="M 28 52 L 28 28 L 52 28" fill="none" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
   <path d="M 1172 52 L 1172 28 L 1148 28" fill="none" stroke="#818cf8" stroke-width="2.5" opacity="0.7"/>
   <path d="M 28 368 L 28 392 L 52 392" fill="none" stroke="#818cf8" stroke-width="2.5" opacity="0.7"/>
