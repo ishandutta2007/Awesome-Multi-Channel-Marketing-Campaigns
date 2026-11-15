@@ -59,7 +59,7 @@ Commercial, cloud-hosted multi-channel marketing hubs and orchestration platform
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven, and developer-first marketing automation platforms. Sorted by GitHub Stars_Count (descending ⭐):
+Self-hosted, community-driven, and developer-first marketing automation platforms. Sorted by GitHub_Stars_Count (descending ⭐):
 
 | 📦 Project | ⭐ GitHub_Stars | 💻 Tech Stack | 📜 License | 📝 Description & Use Case |
 | :--- | :---: | :--- | :--- | :--- |
@@ -118,7 +118,7 @@ When choosing or deploying a multi-channel campaign solution:
 Contributions are welcome! 🌟 If you know of an outstanding open-source Multi-Channel Marketing Campaign tool that should be included:
 
 1. 🍴 Fork this repository.
-2. 📝 Add the tool to the appropriate tables with accurate license, tech stack, and GitHub Stars_Badge.
+2. 📝 Add the tool to the appropriate tables with accurate license, tech stack, and GitHub_Stars_Badge.
 3. 🚀 Submit a pull request detailing the project and why it stands out.
 
 Please ensure added repositories are actively maintained (commits within the last 12 months) and open-source.
