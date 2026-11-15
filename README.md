@@ -59,9 +59,9 @@ Commercial, cloud-hosted multi-channel marketing hubs and orchestration platform
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven, and developer-first marketing automation platforms. Sorted by GitHub star count (descending ⭐):
+Self-hosted, community-driven, and developer-first marketing automation platforms. Sorted by GitHub Stars_Count (descending ⭐):
 
-| 📦 Project | ⭐ Stars | 💻 Tech Stack | 📜 License | 📝 Description & Use Case |
+| 📦 Project | ⭐ GitHub_Stars | 💻 Tech Stack | 📜 License | 📝 Description & Use Case |
 | :--- | :---: | :--- | :--- | :--- |
 | **[Novu](https://github.com/novuhq/novu)** | [![Stars](https://img.shields.io/github/stars/novuhq/novu?style=social&color=white)](https://github.com/novuhq/novu/stargazers) | TypeScript, Node.js, React, Redis, MongoDB | MIT | Open-source notification infrastructure and workflow orchestration engine. Coordinates multi-channel notifications across Email, SMS, In-App feeds, Push (FCM/APNS), and Chat (Slack, Discord) with digest engines and fallback routing. |
 | **[Chatwoot](https://github.com/chatwoot/chatwoot)** | [![Stars](https://img.shields.io/github/stars/chatwoot/chatwoot?style=social&color=white)](https://github.com/chatwoot/chatwoot/stargazers) | Ruby on Rails, Vue.js, PostgreSQL, Redis | AGPL-3.0 | Self-hosted customer engagement suite and live chat platform. Enables conversational outbound marketing and proactive customer support across Website live chat, WhatsApp, SMS, Email, and social channels. |
@@ -118,7 +118,7 @@ When choosing or deploying a multi-channel campaign solution:
 Contributions are welcome! 🌟 If you know of an outstanding open-source Multi-Channel Marketing Campaign tool that should be included:
 
 1. 🍴 Fork this repository.
-2. 📝 Add the tool to the appropriate tables with accurate license, tech stack, and GitHub star badge.
+2. 📝 Add the tool to the appropriate tables with accurate license, tech stack, and GitHub Stars_Badge.
 3. 🚀 Submit a pull request detailing the project and why it stands out.
 
 Please ensure added repositories are actively maintained (commits within the last 12 months) and open-source.
@@ -147,3 +147,12 @@ This repository and curated list are released under the [Creative Commons Zero v
 ---
 
 ⭐ **If this list helped you find the right marketing orchestration stack, please star the repo!** ⭐
+
+## Star History
+
+<a href="https://star-history.com/#ishandutta2007/Awesome-Multi-Channel-Marketing-Campaigns&Timeline" align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ishandutta2007_Awesome-Multi-Channel-Marketing-Campaigns_growth.svg">
+    <img alt="Star History Chart" src="assets/ishandutta2007_Awesome-Multi-Channel-Marketing-Campaigns_growth.svg">
+  </picture>
+</a>
