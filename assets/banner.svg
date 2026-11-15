@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="sub-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+
+    <!-- Channel Pill Gradients -->
+    <linearGradient id="email-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="sms-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="push-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="wa-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="social-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 19px;
+      letter-spacing: 0.2px;
+    }
+    .pill-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      fill: #ffffff;
+    }
+    .badge-tag {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      fill: #38bdf8;
+    }
+
+    /* Ambient Dynamic Pulses & Particle Animation */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(1.08); }
+    }
+    @keyframes floatPill1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes floatPill2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(7px); }
+    }
+    @keyframes dashCycle {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes beamMove {
+      0% { opacity: 0.2; }
+      50% { opacity: 0.8; }
+      100% { opacity: 0.2; }
+    }
+
+    .ambient-glow-1 {
+      animation: pulseGlow 8s infinite ease-in-out;
+      transform-origin: 200px 100px;
+    }
+    .ambient-glow-2 {
+      animation: pulseGlow 10s infinite ease-in-out reverse;
+      transform-origin: 1000px 300px;
+    }
+    .pill-anim-1 { animation: floatPill1 6s infinite ease-in-out; }
+    .pill-anim-2 { animation: floatPill2 5s infinite ease-in-out; }
+    .stream-line {
+      stroke-dasharray: 6 6;
+      animation: dashCycle 2s linear infinite;
+    }
+    .beam {
+      animation: beamMove 3s infinite ease-in-out;
+    }
+  </style>
+
+  <!-- Background Base Canvas -->
+  <rect width="1200" height="400" rx="16" fill="url(#bg-grad)" />
+
+  <!-- Background Ambient Glow Circles -->
+  <g class="ambient-glow-1">
+    <circle cx="200" cy="90" r="140" fill="#38bdf8" opacity="0.12" filter="url(#glow)" />
+  </g>
+  <g class="ambient-glow-2">
+    <circle cx="1020" cy="300" r="160" fill="#c084fc" opacity="0.12" filter="url(#glow)" />
+    <circle cx="600" cy="380" r="120" fill="#6366f1" opacity="0.08" filter="url(#glow)" />
+  </g>
+
+  <!-- Geometric Grid & Workflow Lines in Background -->
+  <g opacity="0.15">
+    <line x1="100" y1="0" x2="100" y2="400" stroke="#94a3b8" stroke-width="1" />
+    <line x1="300" y1="0" x2="300" y2="400" stroke="#94a3b8" stroke-width="1" />
+    <line x1="600" y1="0" x2="600" y2="400" stroke="#94a3b8" stroke-width="1" />
+    <line x1="900" y1="0" x2="900" y2="400" stroke="#94a3b8" stroke-width="1" />
+    <line x1="1100" y1="0" x2="1100" y2="400" stroke="#94a3b8" stroke-width="1" />
+    
+    <line x1="0" y1="80" x2="1200" y2="80" stroke="#94a3b8" stroke-width="1" />
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#94a3b8" stroke-width="1" />
+    <line x1="0" y1="320" x2="1200" y2="320" stroke="#94a3b8" stroke-width="1" />
+  </g>
+
+  <!-- Dynamic Orchestration Flow Lines (Below Text / In Deep Layer) -->
+  <g opacity="0.45">
+    <!-- Curved Marketing Pipeline Lines -->
+    <path d="M 120 330 C 350 350, 450 310, 600 330 C 750 350, 850 320, 1080 330" fill="none" stroke="#6366f1" stroke-width="2.5" class="stream-line" />
+    <path d="M 150 70 C 350 40, 500 90, 700 60 C 900 30, 980 80, 1050 60" fill="none" stroke="#38bdf8" stroke-width="2" class="stream-line" />
+    
+    <!-- Pulse Signals -->
+    <circle cx="380" cy="336" r="4" fill="#38bdf8" class="beam" />
+    <circle cx="820" cy="332" r="4" fill="#c084fc" class="beam" />
+    <circle cx="560" cy="65" r="4" fill="#34d399" class="beam" />
+  </g>
+
+  <!-- Top Category Tag -->
+  <g transform="translate(600, 72)">
+    <rect x="-140" y="-18" width="280" height="34" rx="17" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text text-anchor="middle" y="5" class="badge-tag">⚡ OMNICHANNEL ORCHESTRATION</text>
+  </g>
+
+  <!-- Main Hero Titles (Strictly Centered Foreground with Sharp Contrast) -->
+  <g transform="translate(600, 148)">
+    <text text-anchor="middle" class="title-text" fill="url(#text-grad)">Awesome Multi-Channel Marketing</text>
+  </g>
+
+  <g transform="translate(600, 194)">
+    <text text-anchor="middle" class="subtitle-text" fill="url(#sub-grad)">Campaign Automation • Journey Orchestration • SaaS &amp; Open-Source Hubs</text>
+  </g>
+
+  <!-- Dynamic Channel Pills Section (Bottom Area, Non-overlapping) -->
+  <g transform="translate(0, 272)">
+    <!-- Email Channel -->
+    <g class="pill-anim-1" transform="translate(145, 0)">
+      <g filter="url(#card-shadow)">
+        <rect x="0" y="0" width="150" height="46" rx="23" fill="url(#email-grad)" stroke="#38bdf8" stroke-width="1.2" />
+        <text x="75" y="28" text-anchor="middle" class="pill-text">✉️ Email Journeys</text>
+      </g>
+    </g>
+
+    <!-- SMS Channel -->
+    <g class="pill-anim-2" transform="translate(330, 0)">
+      <g filter="url(#card-shadow)">
+        <rect x="0" y="0" width="135" height="46" rx="23" fill="url(#sms-grad)" stroke="#34d399" stroke-width="1.2" />
+        <text x="67" y="28" text-anchor="middle" class="pill-text">💬 SMS &amp; MMS</text>
+      </g>
+    </g>
+
+    <!-- Push Notification Channel -->
+    <g class="pill-anim-1" transform="translate(500, 0)">
+      <g filter="url(#card-shadow)">
+        <rect x="0" y="0" width="165" height="46" rx="23" fill="url(#push-grad)" stroke="#fbbf24" stroke-width="1.2" />
+        <text x="82" y="28" text-anchor="middle" class="pill-text">🔔 Mobile/Web Push</text>
+      </g>
+    </g>
+
+    <!-- WhatsApp Channel -->
+    <g class="pill-anim-2" transform="translate(700, 0)">
+      <g filter="url(#card-shadow)">
+        <rect x="0" y="0" width="155" height="46" rx="23" fill="url(#wa-grad)" stroke="#4ade80" stroke-width="1.2" />
+        <text x="77" y="28" text-anchor="middle" class="pill-text">📱 WhatsApp API</text>
+      </g>
+    </g>
+
+    <!-- Social / Chat Channel -->
+    <g class="pill-anim-1" transform="translate(890, 0)">
+      <g filter="url(#card-shadow)">
+        <rect x="0" y="0" width="165" height="46" rx="23" fill="url(#social-grad)" stroke="#c084fc" stroke-width="1.2" />
+        <text x="82" y="28" text-anchor="middle" class="pill-text">🚀 Social &amp; In-App</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Modern Corner Accents -->
+  <path d="M 24 48 L 24 24 L 48 24" fill="none" stroke="#38bdf8" stroke-width="2.5" opacity="0.6"/>
+  <path d="M 1176 48 L 1176 24 L 1152 24" fill="none" stroke="#818cf8" stroke-width="2.5" opacity="0.6"/>
+  <path d="M 24 352 L 24 376 L 48 376" fill="none" stroke="#818cf8" stroke-width="2.5" opacity="0.6"/>
+  <path d="M 1176 352 L 1176 376 L 1152 376" fill="none" stroke="#c084fc" stroke-width="2.5" opacity="0.6"/>
+</svg>
